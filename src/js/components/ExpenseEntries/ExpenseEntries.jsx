@@ -12,8 +12,6 @@ export default class ExpenseEntries extends React.Component {
     super(props);
     /* 
     * Binding the methods to the component this
-    * due to the methods being called back by event emitters
-    * losing the content of this
     */
     this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
     this.handleAmountInput = this.handleAmountInput.bind(this);
@@ -82,8 +80,8 @@ export default class ExpenseEntries extends React.Component {
               </thead>
               <tbody>
                 {
-                  lineItems.map(lineItem => (
-                    <tr>
+                  lineItems.map((lineItem,index) => (
+                    <tr key={'index-'+index}>
                       <td>{ lineItem.description }</td>
                       <td>${ lineItem.amount }</td>
                     </tr>

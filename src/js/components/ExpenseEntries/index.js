@@ -9,5 +9,6 @@ function mapStoreToProps(store) {
         lineItems: store.expense.lineItems
     };
 }
+
 //Returns a function called within the component itself.
 export default connect(mapStoreToProps)(ExpenseEntries);
