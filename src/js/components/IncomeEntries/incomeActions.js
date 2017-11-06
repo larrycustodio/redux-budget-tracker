@@ -14,7 +14,7 @@ export function updateIncomeAmount(amount){
     }
 }
 
-export function addExpense(description, amount) {
+export function addIncome(description, amount) {
     return {
         type: 'ADD_INCOME',
         payload: {

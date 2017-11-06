@@ -1,8 +1,18 @@
 import React from 'react';
 
+import {
+  updateIncomeDescription,
+  updateIncomeAmount,
+  addIncome
+} from './incomeActions';
+
 export default class IncomeEntries extends React.Component {
   constructor(props) {
     super(props);
+
+    this.updateIncomeDescription = this.updateIncomeDescription.bind(this);
+    this.updateIncomeAmount = this.updateIncomeAmount.bind(this);
+    this.addIncome = this.addIncome.bind(this);
   }
 
   render() {
