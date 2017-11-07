@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 //Importing action creators
 import {
@@ -7,7 +7,7 @@ import {
   addExpense
 } from './expenseActions';
 
-export default class ExpenseEntries extends React.Component {
+export default class ExpenseEntries extends Component {
   constructor(props) {
     super(props);
     /* 

@@ -32,11 +32,12 @@ export default class IncomeEntries extends React.Component {
 
   handleAddIncome(){
     const { description, amount, dispatch } = this.props;
-    dispatch(addIncome(description,amount));
+    dispatch(addIncome(description, amount));
   }
 
   render() {
     const { description, amount, lineItems } = this.props;
+    
     return (
       <div className='card border-success mb-3'>
         <div className='card-header text-white bg-success'>Income Entries</div>
