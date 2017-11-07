@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 //Importing action creators
 import {
@@ -7,7 +7,7 @@ import {
   addIncome
 } from './incomeActions';
 
-export default class IncomeEntries extends React.Component {
+export default class IncomeEntries extends Component {
   constructor(props) {
     super(props);
     /* 
@@ -27,7 +27,6 @@ export default class IncomeEntries extends React.Component {
     const { dispatch } = this.props;
     const { value } = e.target;
     dispatch(updateIncomeAmount(value));
-
   }
 
   handleAddIncome(){
