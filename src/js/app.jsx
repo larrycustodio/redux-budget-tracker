@@ -2,6 +2,7 @@ import React from 'react';
 import ExpenseEntries from './components/ExpenseEntries';
 import IncomeEntries from './components/IncomeEntries';
 import Summary from './components/Summary';
+import style from '../css/style.scss';
 
 export default class App extends React.Component {
   render() {
