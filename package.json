@@ -11,7 +11,6 @@
     "postinstall": "webpack -p"
   },
   "dependencies": {
-    "axios": "^0.16.1",
     "babel": "^6.3.26",
     "babel-loader": "^7.1.1",
     "babel-preset-airbnb": "^1.0.1",
@@ -24,6 +23,7 @@
     "json-loader": "^0.5.4",
     "lodash": "^4.15.0",
     "lodash-webpack-plugin": "^0.10.2",
+    "material-design-icons": "^3.0.1",
     "morgan": "^1.8.1",
     "prop-types": "^15.5.10",
     "react": "^15.3.2",
@@ -35,7 +35,6 @@
     "url-loader": "^0.5.9"
   },
   "devDependencies": {
-    "axios-mock-adapter": "^1.6.1",
     "babel-minify-webpack-plugin": "^0.2.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
