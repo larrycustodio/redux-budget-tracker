@@ -3,7 +3,7 @@ import BudgetForm from './BudgetForm';
 
 const mapStoreToProps = (store) => {
     return {
-
+        budgetForm: store.budgetForm
     };
 }
 

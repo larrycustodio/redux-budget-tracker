@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 //Importing action creators
 import {
-  updateExpenseDescription,
-  updateExpenseAmount,
   addExpense
 } from './expenseActions';
 

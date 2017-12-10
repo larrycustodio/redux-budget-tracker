@@ -1,10 +1,6 @@
-/* Created for a part of the store in 
-* which expense component
-* is responsible for
-*/
+import { types } from './expenseActions';
+
 const defaultState = {
-    description: '',
-    amount: '',
     lineItems: []
 };
 
@@ -13,28 +9,12 @@ export default function ExpenseReducer(state = defaultState, action) {
     const { type, payload } = action;
 
     switch(type){
-        case 'UPDATE_EXPENSE_DESCRIPTION': {
+        case types.ADD_EXPENSE: {
             return {
                 ...state,
-                description: payload.description
-            }
-        }
-
-        case 'UPDATE_EXPENSE_AMOUNT': {
-            return {
-                ...state,
-                amount: payload.amount
-            }
-        }
-
-        case 'ADD_EXPENSE': {
-            const { description, amount } = action.payload;
-            return {
-                description: '',
-                amount: '',
                 lineItems: [
                     ...state.lineItems,
-                    { description, amount }
+                    { ...payload }
                 ]
             }
         }

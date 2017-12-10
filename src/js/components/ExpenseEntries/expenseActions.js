@@ -1,25 +1,14 @@
 //Expense action creators
-
-export function updateExpenseDescription(description) {
-    return {
-        type: 'UPDATE_EXPENSE_DESCRIPTION',
-        payload: { description }
-    };
-}
-
-export function updateExpenseAmount(amount) {
-    return {
-        type: 'UPDATE_EXPENSE_AMOUNT',
-        payload: { amount }
-    };
-}
+export const types = {
+    ADD_EXPENSE: 'ADD_EXPENSE'
+};
 
 export function addExpense(description, amount) {
     return {
-        type: 'ADD_EXPENSE',
+        type: types.ADD_EXPENSE,
         payload: {
             description,
-            amount: parseFloat(amount)
+            amount: parseFloat(amount).toFixed(2)
         }
     };
 }

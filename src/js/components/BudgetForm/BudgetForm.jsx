@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { updateBudgetInformation } from './budgetFormActions';
+import { addExpense } from '../ExpenseEntries/expenseActions';
+import { addIncome } from '../IncomeEntries/incomeActions';
 
 export default class BudgetForm extends Component {
     constructor(props) {
@@ -9,13 +12,20 @@ export default class BudgetForm extends Component {
     }
 
     handleFormInput(e){
-        console.log(`changing inputs for ${e.target.name}`);
-        
+        this.props.dispatch(updateBudgetInformation(e.target.name,e.target.value));
     }
 
     handleSubmit(e){
         e.preventDefault();
-        console.log('submitting...');
+        const { source, description, amount } =  this.props.budgetForm.onEdit;
+        if(!!source && !!description && !!amount){
+            if(source == 'income'){
+                this.props.dispatch(addIncome(description, amount));
+            }
+            if(source == 'expense'){
+                this.props.dispatch(addExpense(description, amount));
+            }
+        }
     }
 
     render() {
@@ -24,11 +34,11 @@ export default class BudgetForm extends Component {
                 <h2>Add New Budget</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className='form-group'>
-                        <label htmlFor='budget-description'>Expense or Income?</label>
-                        <select name=''
+                        <label htmlFor='budget-source'>Expense or Income?</label>
+                        <select name='source'
                             onChange={this.handleFormInput}>
-                            <option value="0">Expense</option>
-                            <option value="1">Income</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expenses</option>
                         </select>
                     </div>
                     <div className='form-group'>
@@ -54,8 +64,8 @@ export default class BudgetForm extends Component {
                             />
                         </div>
                     </div>
-                    <button type='button' 
-                    onClick={this.handleSubmit}
+                    <button type='submit' 
+                    onSubmit={this.handleSubmit}
                     className='btn'>Add Expense</button>
                 </form>
             </div>

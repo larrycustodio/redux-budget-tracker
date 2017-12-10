@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 //Importing action creators
 import {
-  updateIncomeDescription,
-  updateIncomeAmount,
   addIncome
 } from './incomeActions';
 

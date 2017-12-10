@@ -1,10 +1,13 @@
 export const types = {
-    BUDGET_FORM_ACTION_NAME: 'BUDGET_FORM_ACTION_NAME'
+    UPDATE_BUDGET_INFO: 'UPDATE_BUDGET_INFO'
 }
 
-export const actionBudgetForm = (input) => {
+export const updateBudgetInformation = (target,value) => {
+    if(target == 'amount') value = parseFloat(value).toFixed(2);
     return {
-        type: types.BUDGET_FORM_ACTION_NAME,
-        payload: {}
+        type: types.UPDATE_BUDGET_INFO,
+        payload: {
+            [target] : value
+        }
     };
 } 
