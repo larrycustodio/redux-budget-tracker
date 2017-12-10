@@ -1,10 +1,10 @@
 import { types } from './budgetFormActions';
 
 const defaultState = {
-
+    hello: 'blank'
 };
 
-export const budgetFormReducer = (state = defaultState, action) => {
+export default function budgetFormReducer(state = defaultState, action){
     const { type, payload } = action;
 
     switch(type){
@@ -13,8 +13,8 @@ export const budgetFormReducer = (state = defaultState, action) => {
                 ...state
             }
         }
-        default:
+        default: {
             return state;
+        }
     }
-    return state;
 }

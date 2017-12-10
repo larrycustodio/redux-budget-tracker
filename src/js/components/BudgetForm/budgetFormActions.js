@@ -3,6 +3,8 @@ export const types = {
 }
 
 export const actionBudgetForm = (input) => {
-    return 
+    return {
+        type: types.BUDGET_FORM_ACTION_NAME,
+        payload: {}
     };
 } 

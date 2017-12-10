@@ -13,84 +13,31 @@ export default class IncomeEntries extends Component {
     /* 
     * Binding the methods to the component this
     */
-    this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
-    this.handleAmountInput = this.handleAmountInput.bind(this);
-    this.handleAddIncome = this.handleAddIncome.bind(this);
-  }
-  handleDescriptionInput(e){
-    const { dispatch } = this.props;
-    const { value } = e.target;
-    dispatch(updateIncomeDescription(value));
-  }
-
-  handleAmountInput(e){
-    const { dispatch } = this.props;
-    const { value } = e.target;
-    dispatch(updateIncomeAmount(value));
-  }
-
-  handleAddIncome(){
-    const { description, amount, dispatch } = this.props;
-    dispatch(addIncome(description, amount));
   }
 
   render() {
     const { description, amount, lineItems } = this.props;
-    
+
     return (
-      <div className='card border-success mb-3'>
-        <div className='card-header text-white bg-success'>Income Entries</div>
-        <div className='card-body'>
-          <form>
-            <div className='form-group'>
-              <label htmlFor='income-description'>Description</label>
-              <input
-                type='text'
-                className='form-control'
-                id='income-description'
-                value={ description }
-                onChange={ this.handleDescriptionInput }
-              />
-            </div>
-            <div className='form-group'>
-              <label htmlFor='income-amount'>Amount</label>
-              <div className='input-group'>
-                <span className='input-group-addon'>$</span>
-                <input
-                  type='text'
-                  className='form-control'
-                  id='income-amount'
-                  value = { amount }
-                  onChange = { this.handleAmountInput }
-                />
-              </div>
-            </div>
-            <button
-              type='button'
-              className='btn btn-success col-12 mb-5'
-              onClick = { this.handleAddIncome }>
-              + Add Income
-            </button>
-            <table className='table table-sm table-hover'>
-              <thead>
-                <tr>
-                  <th>Description</th>
-                  <th style={ { width: 120 } } >Amount</th>
+      <div>
+        <table className='table table-sm table-hover'>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th style={{ width: 120 }} >Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              lineItems.map((lineItem, index) => (
+                <tr key={'item-' + index}>
+                  <td>{lineItem.description}</td>
+                  <td>${lineItem.amount}</td>
                 </tr>
-              </thead>
-              <tbody>
-                  {
-                    lineItems.map((lineItem,index) => (
-                      <tr key={'item-'+index}>
-                        <td>{ lineItem.description }</td>
-                        <td>${ lineItem.amount }</td>
-                      </tr>
-                    ))
-                  }
-              </tbody>
-            </table>
-          </form>
-        </div>
+              ))
+            }
+          </tbody>
+        </table>
       </div>
     );
   }
