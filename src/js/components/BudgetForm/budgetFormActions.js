@@ -3,7 +3,6 @@ export const types = {
 }
 
 export const updateBudgetInformation = (target,value) => {
-    if(target == 'amount') value = parseFloat(value).toFixed(2);
     return {
         type: types.UPDATE_BUDGET_INFO,
         payload: {

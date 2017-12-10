@@ -36,6 +36,7 @@ export default class BudgetForm extends Component {
                     <div className='form-group'>
                         <label htmlFor='budget-source'>Expense or Income?</label>
                         <select name='source'
+                            value={this.props.budgetForm.onEdit.source}
                             onChange={this.handleFormInput}>
                             <option value="income">Income</option>
                             <option value="expense">Expenses</option>
@@ -47,8 +48,8 @@ export default class BudgetForm extends Component {
                             name='description'
                             id='budgetDescription'
                             className='form-control'
-                        // value={description}
-                        onChange = { this.handleFormInput }
+                            value={this.props.budgetForm.onEdit.description}
+                            onChange = { this.handleFormInput }
                         />
                     </div>
                     <div className='form-group'>
@@ -59,7 +60,7 @@ export default class BudgetForm extends Component {
                                 name='amount'
                                 id='budgetAmount'
                                 className='form-control'
-                            // value={amount}
+                            value={this.props.budgetForm.onEdit.amount}
                             onChange = { this.handleFormInput }
                             />
                         </div>
