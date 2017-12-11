@@ -1,7 +1,9 @@
-body {
-    font-family: 'Roboto', 'Helvetica Neue', Tahoma, sans-serif;
-    font-weight: 300;
+.navbar-site-title {
+    font-size: 175%;
 }
-input {
-    font-family: 'Roboto';
+.navbar-is-aligned-middle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }

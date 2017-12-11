@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
 
-const calculateSum = arr => arr.reduce((curr,val) => curr + val);
-const mapLineItemAmount = lineItems => lineItems.map(item => parseFloat(item.amount));
+const calculateSum = arr => {
+  return arr.reduce((curr,val) => curr + val)
+};
+
+const mapLineItemAmount = lineItems => {
+  return lineItems.map(item => {
+    return parseFloat(item.amount)
+  })
+};
+
+const getToday = () => {
+  const monthAbbrv = ['Jan','Feb','Mar','Apr','May',
+  'Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+  const today = new Date();
+  let dd = today.getDate();
+  dd = dd < 10 ? '0' + dd : dd;
+  const mm = today.getMonth();
+  const yyyy = today.getFullYear();
+
+  return `${monthAbbrv[mm]} ${dd}, ${yyyy}`; 
+} 
 
 export default class Summary extends Component {
   render() {
@@ -21,7 +40,10 @@ export default class Summary extends Component {
     }
 
     return (
-          <div className='container'>
+          <section className='section'>
+            <div className='container'>
+            <h1 className='title'>Budget Overview</h1>
+            <h2 className='subtitle'>Last Update: { getToday() }</h2>
               <div className='row'>
                 <small className='strong'>Total Income</small>
                 <p>${ incomeTotal.toFixed(2) }</p>
@@ -34,7 +56,8 @@ export default class Summary extends Component {
                 <small className='strong'>Left after spending</small>
                 <p>${ (incomeTotal - expenseTotal).toFixed(2) }</p>
             </div>
-          </div>
+            </div>
+          </section>
     );
   }
 }
