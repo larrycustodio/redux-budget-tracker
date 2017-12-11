@@ -60,7 +60,7 @@ export default class BudgetForm extends Component {
                         </div>
                         <form className='modal-card-body' onSubmit={this.handleSubmit}>
                             <div className='field'>
-                                <label className='label'>Expense or Income?</label>
+                                <label className='label'>Budget Category</label>
                                 <div className='control'>
                                     <div className='select'>
                                         <select name='source'
@@ -101,9 +101,8 @@ export default class BudgetForm extends Component {
                                 <div className='control'>
                                     <button type='submit'
                                         onSubmit={this.handleSubmit}
-                                        className='button is-primary'>
-                                        Add Expense
-                                </button>
+                                        className={`button is-primary 
+                                        ${this.props.budgetForm.onEdit.source}`}>Add</button>
                                 </div>
                             </div>
                         </form>
