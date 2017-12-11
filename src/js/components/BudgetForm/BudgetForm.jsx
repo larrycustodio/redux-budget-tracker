@@ -28,15 +28,12 @@ export default class BudgetForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
         const { source, description, amount } = this.props.budgetForm.onEdit;
-        console.log(this.props.budgetForm.onEdit);
         if (!!source && !!description && !!amount) {
             if (source == 'income') {
-                console.log('dispatching income...');
                 this.props.dispatch(addIncome(description, amount));
                 this.props.dispatch(closeBudgetForm());                
             }
             if (source == 'expense') {
-                console.log('dispatching expense...');                
                 this.props.dispatch(addExpense(description, amount));
                 this.props.dispatch(closeBudgetForm());                
             }
