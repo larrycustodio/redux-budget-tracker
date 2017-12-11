@@ -20,7 +20,7 @@ export default class BudgetForm extends Component {
         this.props.dispatch(openBudgetForm());
     }
     handleModalClose() {
-        this.props.dispatch(closeBudgetForm());        
+        this.props.dispatch(closeBudgetForm());
     }
     handleFormInput(e) {
         this.props.dispatch(updateBudgetInformation(e.target.name, e.target.value));
@@ -28,24 +28,28 @@ export default class BudgetForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
         const { source, description, amount } = this.props.budgetForm.onEdit;
+        console.log(this.props.budgetForm.onEdit);
         if (!!source && !!description && !!amount) {
             if (source == 'income') {
+                console.log('dispatching income...');
                 this.props.dispatch(addIncome(description, amount));
+                this.props.dispatch(closeBudgetForm());                
             }
             if (source == 'expense') {
+                console.log('dispatching expense...');                
                 this.props.dispatch(addExpense(description, amount));
+                this.props.dispatch(closeBudgetForm());                
             }
         }
     }
     render() {
         return (
             <aside className='aside-modify-budget'>
-                <button className='button is-info is-pulled-right' onClick={this.handleModalOpen}>
+                <button className='button is-info button-modal-toggler' onClick={this.handleModalOpen}>
                     <span className="icon is-large">
                         <i className="fa fa-plus"></i>
                     </span>
                 </button>
-
                 <div className={ this.props.budgetForm.isFormVisible ? 'modal is-active' : 'modal' }>
                     <div className='modal-background'></div>
                     <div className='modal-card'>
@@ -82,7 +86,7 @@ export default class BudgetForm extends Component {
                                 </div>
                                 <div className='control has-icons-left'>
                                     <input type='text'
-                                        name='Amount'
+                                        name='amount'
                                         id='budgetAmount'
                                         className='input'
                                         onChange={this.handleFormInput}

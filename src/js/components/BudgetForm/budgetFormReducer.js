@@ -2,10 +2,10 @@ import { types } from './budgetFormActions';
 
 const defaultState = {
     onEdit: {
-        source: 'Enter source',
-        description: 'Enter description',
+        source: '',
+        description: '',
         amount: '',
-        comments: 'Add note'
+        comments: ''
     },
     isFormVisible: false
 };

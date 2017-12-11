@@ -1,3 +1,16 @@
+#root {
+    background-color: rgb(245, 245, 245);
+}
+@keyframes modalShow {
+    0%{
+        opacity: 0;
+        transform: translateY(-10%) scaleX(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%) scaleX(1);
+    }
+} 
 .navbar-site-title {
     font-size: 175%;
 }
@@ -6,4 +19,27 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+}
+.modal.is-active {
+    .modal-background {
+        opacity: 0.5;
+    }
+    .modal-card {
+        animation: modalShow 500ms ease forwards;
+    }
+}
+
+.button-modal-toggler {
+    position: fixed;
+    
+}
+.footer {
+    background-color: rgb(54, 54, 54);
+    color: rgb(245,245,245);
+    strong {
+        color: rgb(255, 56, 95);
+    }
+    a {
+        color: rgb(255, 56, 95);
+    }
 }

@@ -16,26 +16,29 @@ export default class ExpenseEntries extends Component {
     const { description, amount, lineItems } = this.props;
 
     return (
-      <div>
-            <table className='table table-sm table-hover'>
-              <thead>
-                <tr>
-                  <th>Description</th>
-                  <th style={{ width: 120 }} >Amount</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  lineItems.map((lineItem,index) => (
-                    <tr key={'index-'+index}>
-                      <td>{ lineItem.description }</td>
-                      <td>${ lineItem.amount }</td>
-                    </tr>
-                  ))
-                }
-              </tbody>
-            </table>
+      <section className='section is-light'>
+        <div className='container'>
+        <h1 className='title'>Expense Overview</h1>
+          <table className='table is-striped'>
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                lineItems.map((lineItem, index) => (
+                  <tr key={'index-' + index} data-expense-index={index}>
+                    <td>{lineItem.description}</td>
+                    <td>${lineItem.amount}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
         </div>
+      </section>
     );
   }
 }
