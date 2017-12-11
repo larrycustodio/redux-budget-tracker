@@ -25,6 +25,7 @@
     "lodash-webpack-plugin": "^0.10.2",
     "material-design-icons": "^3.0.1",
     "morgan": "^1.8.1",
+    "postinstall": "0.0.1",
     "prop-types": "^15.5.10",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -32,9 +33,7 @@
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.0",
     "serve-favicon": "^2.0.1",
-    "url-loader": "^0.5.9"
-  },
-  "devDependencies": {
+    "url-loader": "^0.5.9",
     "babel-minify-webpack-plugin": "^0.2.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
