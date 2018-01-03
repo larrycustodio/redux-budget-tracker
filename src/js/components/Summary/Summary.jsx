@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import SummaryChart from './SummaryChart';
-
 const calculateSum = arr => {
   return arr.reduce((curr, val) => curr + val)
 };
@@ -46,29 +45,31 @@ export default class Summary extends Component {
           <h1 className='title'>Budget Overview</h1>
           <h2 className='subtitle'>Last Update: {getToday()}</h2>
           <div className='columns'>
-            <div className='column'>
+
+            <div className='column is-6 has-text-centered'>
               <div className='py-1'>
-              <p className={
-                'is-size-1 ' + (incomeTotal - expenseTotal < 0 ? 'has-text-danger' : 
-                incomeTotal - expenseTotal === 0 ? 'has-text-grey' : 'has-text-success')
-                }>
-                ${(incomeTotal - expenseTotal).toFixed(2)}
-              </p>
-              <p className='is-size-4'>Money Left</p>
-              </div>
+                <p className={
+                  'is-size-1 ' + (incomeTotal - expenseTotal < 0 ? 'has-text-danger' :
+                    incomeTotal - expenseTotal === 0 ? 'has-text-grey' : 'has-text-success')}>
+                  ${(incomeTotal - expenseTotal).toFixed(2)}
+                </p>
+                <p className='is-size-4'>Money Left</p>
+              </div>{/* End Net Total */}
+
               <div className='columns is-1 py-1'>
                 <div className='column'>
                   <p className='is-size-3 has-text-success'>${incomeTotal.toFixed(2)}</p>
                   <p className='is-size-6'>Total Income</p>
-                </div>
+                </div>{/* End Total Income */}
                 <div className='column'>
                   <p className='is-size-3 has-text-danger'>${expenseTotal.toFixed(2)}</p>
                   <p className='is-size-6'>Total Expense</p>
-                </div>
+                </div>{/* End Total Expenses */}
               </div>
+
             </div>{/* End summary table */}
-            <div className='column is-9'>
-              <SummaryChart incomeTotal={incomeTotal.toFixed(2)} expenseTotal={expenseTotal.toFixed(2)} />
+            <div className='column is-6'>
+                  <SummaryChart />
             </div>{/* End summary chart */}
           </div>
         </div>

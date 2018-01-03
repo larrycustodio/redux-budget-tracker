@@ -4,7 +4,7 @@
 ## Overview
 I developed this single page budget planning app as an exercise on client side state management using [Redux](https://redux.js.org/).
 
-Also included is an implementation of [Charts.js](http://www.chartjs.org/)
+Also included is an implementation of a React wrapper for Charts.js [Source](https://github.com/jerairrest/react-chartjs-2), 
 
 ## Local Installation & Setup
 1. Install a local copy by forking or cloning this repository on a local directory, i.e. `git clone https://github.com/larrycustodio/redux-budget-tracker.git budgtr`

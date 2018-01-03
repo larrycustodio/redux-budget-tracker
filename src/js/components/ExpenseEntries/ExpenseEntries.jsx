@@ -16,7 +16,7 @@ export default class ExpenseEntries extends Component {
     const { description, amount, lineItems } = this.props;
 
     return (
-      <section className='section is-light'>
+      <section className='section'>
         <div className='container'>
         <h1 className='title'>Expense Overview</h1>
           <table className='table is-striped'>
