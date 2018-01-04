@@ -12,7 +12,7 @@
     "postinstall": "webpack"
   },
   "engines": {
-    "node": ">=8.9.1"
+    "node": "8.9.x"
   },
   "dependencies": {
     "babel": "^6.3.26",
@@ -51,7 +51,6 @@
     "morgan": "^1.8.1",
     "nightmare": "^2.10.0",
     "node-sass": "^4.7.2",
-    "nodemon": "^1.12.5",
     "postinstall": "0.0.1",
     "prop-types": "^15.5.10",
     "react": "^15.3.2",
@@ -69,6 +68,9 @@
     "style-loader": "^0.19.0",
     "url-loader": "^0.5.9",
     "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.5"
   },
   "license": "MIT"
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { connect } from 'react-redux';
 
-
 class ExpenseChart extends Component {
     render() {
         const expenseData = {
