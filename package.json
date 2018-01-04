@@ -10,6 +10,9 @@
     "test": "npm run build && mocha test/.setup.js test/*.spec.js",
     "postinstall": "webpack -p"
   },
+  "engines": {
+    "node": ">=4"
+  },
   "dependencies": {
     "babel": "^6.3.26",
     "babel-loader": "^7.1.1",
