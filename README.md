@@ -1,6 +1,7 @@
 # Budgetr
-![app screenshot](https://user-images.githubusercontent.com/13429481/34550067-a7150326-f0c2-11e7-9e42-f9484da4c5bc.png)
 [Working Demo](https://lc-budgeting-app.herokuapp.com/)
+
+![app screenshot](https://user-images.githubusercontent.com/13429481/34550067-a7150326-f0c2-11e7-9e42-f9484da4c5bc.png)
 
 ## Overview
 I developed this single page budget planning app as an exercise on client side state management using [Redux](https://redux.js.org/).
