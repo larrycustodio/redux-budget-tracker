@@ -12,26 +12,21 @@ class SummaryChart extends Component {
     render() {
         const summaryData = {
             data: {
-                labels: ['Total Income', 'Total Expenses'],
-                datasets: [
-                    {
-                        label: 'Budget Totals',
-                        backgroundColor: 'rgba(255,99,132,0.2)',
-                        borderColor: 'rgba(255,99,132,1)',
-                        borderWidth: 1,
-                        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-                        hoverBorderColor: 'rgba(255,99,132,1)',
-                        data: [getItemTotal(this.props.incomeItems).toFixed(2), getItemTotal(this.props.expenseItems).toFixed(2)]
-                    }
-                ]
+                labels: ['Income', 'Expenses', 'Money Left'],
+                datasets: [{
+                    label: 'Overview Totals',
+                    backgroundColor: ['rgba(35, 209, 96,0.75)', 'rgba(255, 56, 96,0.75)', 'rgba(32, 156, 238,0.75)'],
+                    hoverBackgroundColor: ['rgba(35, 209, 96,0.75)', 'rgba(255, 56, 96,0.75)', 'rgba(32, 156, 238,0.75)'],
+                    data: [
+                        getItemTotal(this.props.incomeItems).toFixed(2),
+                        -1 * getItemTotal(this.props.expenseItems).toFixed(2),
+                        getItemTotal(this.props.incomeItems).toFixed(2) - getItemTotal(this.props.expenseItems).toFixed(2)
+                    ]
+                }]
             },
             options: {
                 xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Month'
-                    },
+                    display: false,
                     ticks: {
                         beginAtZero: true,
                     }

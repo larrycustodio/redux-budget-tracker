@@ -6,25 +6,21 @@ import { connect } from 'react-redux';
 class ExpenseChart extends Component {
     render() {
         const expenseData = {
-            labels: [
-                'Red',
-                'Green',
-                'Yellow'
-            ],
+            labels: [],
             datasets: [{
-                data: [300, 50, 100],
-                backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56'
-                ],
-                hoverBackgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56'
-                ]
+                data: [],
+                backgroundColor: [],
+                hoverBackgroundColor: []
             }]
-        };        
+        };
+        if(!!this.props.expenseItems.length){
+            this.props.expenseItems.forEach((item,index) => {
+                expenseData.labels.push(item.description);
+                expenseData.datasets[0].data.push(parseFloat(item.amount));
+                expenseData.datasets[0].backgroundColor.push(`hsl(348,100%,${61 + 5 * index}%)`)
+                expenseData.datasets[0].hoverBackgroundColor.push()
+            });
+        }
         return (
             <Pie data={expenseData} />
         );

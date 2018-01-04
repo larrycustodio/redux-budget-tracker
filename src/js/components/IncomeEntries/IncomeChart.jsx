@@ -6,25 +6,21 @@ import { connect } from 'react-redux';
 class IncomeChart extends Component {
     render() {
         const incomeData = {
-            labels: [
-                'Red',
-                'Green',
-                'Yellow'
-            ],
+            labels: [],
             datasets: [{
-                data: [300, 50, 100],
-                backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56'
-                ],
-                hoverBackgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56'
-                ]
+                data: [],
+                backgroundColor: [],
+                hoverBackgroundColor: []
             }]
-        };        
+        };
+        if(!!this.props.incomeItems.length){
+            this.props.incomeItems.forEach((item,index) => {
+                incomeData.labels.push(item.description);
+                incomeData.datasets[0].data.push(parseFloat(item.amount));
+                incomeData.datasets[0].backgroundColor.push(`hsl(171,100%,${35 + 5 * index}%)`)
+                incomeData.datasets[0].hoverBackgroundColor.push()
+            });
+        }
         return (
             <Pie data={incomeData} />
         );
