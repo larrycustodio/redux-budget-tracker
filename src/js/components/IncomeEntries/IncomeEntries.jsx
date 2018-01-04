@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IncomeChart from './incomeChart';
+import IncomeChart from './IncomeChart';
 
 //Importing action creators
 import {

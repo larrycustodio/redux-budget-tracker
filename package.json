@@ -9,10 +9,10 @@
     "start": "node server",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js",
-    "postinstall": "webpack -p"
+    "postinstall": "webpack"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=8.9.1"
   },
   "dependencies": {
     "babel": "^6.3.26",
