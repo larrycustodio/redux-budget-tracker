@@ -69,7 +69,7 @@ export default class Summary extends Component {
 
             </div>{/* End summary table */}
             <div className='column is-6'>
-                  <SummaryChart />
+                  <SummaryChart/>
             </div>{/* End summary chart */}
           </div>
         </div>
