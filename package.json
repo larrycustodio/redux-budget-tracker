@@ -9,7 +9,7 @@
     "start": "node server",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js",
-    "postinstall": "webpack"
+    "postinstall": "webpack -p"
   },
   "engines": {
     "node": "8.9.x"
